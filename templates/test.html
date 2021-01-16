@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Test
+{% endblock %}
+
+{% block main %}
+    <h6>The entrance test is a crucial component of your application. Below, I suggest strategies and resources to help you make a study plan. I recommend that
+    you use the text box provided to track your progress as you study. For example, you can make an ordered list of study tasks you plan to accomplish and cross
+    them off as you finish them. You will be able to save what you wrote and return to it in future sessions.</h6><br>
+
+    <div class="accordion" id="accordionExample">
+      <div class="card">
+        <div class="card-header" id="headingOne">
+          <h2 class="mb-0">
+            <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+              English Test
+            </button>
+          </h2>
+        </div>
+        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+          <div class="card-body">
+            The English test is a 45-minute exam requiring you to read a passage and respond to a specific prompt about the passage. You can use the standard
+            essay formula you were taught in elementary and/or middle school: an introductory paragraph followed by 2-3 body paragraphs followed by a concluding
+            paragraph. On this type of exam, good structure, clear reasoning, and appropriate use of evidence will be more important than coming up with novel,
+            groundbreaking insights about the passage; do not spend too much time attempting to be unique or extraordinary in what you write.<br><br>
+
+            Here is a list of resources you could use to study, with more important items listed first:
+            <ol>
+                <li><a href="https://bca-admissions.bergen.org/SampleQuestions.pdf">Sample English test (pages 21-23) released by BCA</a></li>
+                <li><a href="https://nj.mypearsonsupport.com/practice-tests/english/">NJSLA Literary Analysis Tasks for grades 6-11</a> (not the Narrative Writing Tasks)</li>
+                <li>Engage deeply with your middle school English classes and take the writing assignments seriously</li>
+                <li>Make a habit of reading <a href = "https://www.nytimes.com/"><i>The New York Times</i></a> and/or <a href = "https://www.washingtonpost.com/"><i>The Washington Post</i></a> (consider getting a subscription)</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header" id="headingTwo">
+          <h2 class="mb-0">
+            <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              Math Test
+            </button>
+          </h2>
+        </div>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+          <div class="card-body">
+            The math test is a 60-minute exam with 40 multiple choice questions, each with five answer choices. <i>Note that the math that is tested on the exam
+            is quite different from the math you learned in your middle school classes.</i> You should not assume that you will do very well on the exam simply
+            because you excel in your middle school math classes. While your middle school math classes will cover some of the content, there will be a greater
+            focus on <i>sound reasoning</i> and <i>clever problem-solving</i> as opposed to applying formulas and regurgitating concepts. Therefore, it will be
+            somewhat more similar in format to a middle school math competition.<br><br>
+            <ol>
+              Here is a list of resources you could use to study, with more important items listed first:
+              <li><a href="https://bca-admissions.bergen.org/SampleQuestions.pdf">Sample math test (pages 1-6) and seven sets of practice problems (pages 7-20) released by BCA</a></li>
+              <li><a href="https://artofproblemsolving.com/wiki/index.php/1999_AMC_8">22 sets (1999-2020) of past AMC 8 competition problems</a> (difficult but important, do as many sets as you can)</li>
+              <li><a href="https://nj.mypearsonsupport.com/practice-tests/math/">NJSLA grades 6-8 practice tests</a> (easier and less important; start with these if AMC 8 is too difficult)</li>
+              <li><a href="https://holbrook.bergen.org/archive">Past problems from the middle school math competition hosted by BCA</a> (very difficult, focus on grades 4-5)</li>
+              <li><a href="https://www.mathcounts.org/programs/competition-series/past-competitions">One free set of past MATHCOUNTS competitions</a> (school, chapter, state: all rounds applicable)</li>
+              <li>If interested, get involved in your school's math team! <a href="https://artofproblemsolving.com/store/item/competition-math">This</a> is a good middle school competition math book.</li>
+            </ol>
+          </div>
+        </div>
+      </div><br>
+
+    <form id = "entrancetest" action="/entrancetest" method="post">
+      <div class="form-group" form = "entrancetest">
+        <textarea cols = 100 rows = 10 autocomplete="off" autofocus class="form-control" name = "entrancetest">{{ entrancetest }}</textarea>
+      </div>
+    </form>
+    <form id = "logout" action="/logout"></form>
+
+    <button class="btn btn-primary" type="submit" form = "entrancetest">Save</button>
+    <button class="btn btn-primary" type="submit" form = "logout">Log Out</button><br><br>
+
+    <h6>You are logged in as <i>{{ username }}</i>. Remember to save before logging out!</h6>
+{% endblock %}
+
+<!-- used Bootstrap's accordion example at https://getbootstrap.com/docs/4.5/components/collapse/ as starting point -->
+<!-- used https://stackoverflow.com/questions/27988776/make-accordion-closed-by-default-in-bootstrap to learn how to make accordion closed by default -->
+<!-- used https://www.w3schools.com/tags/tag_textarea.asp to learn about textarea parameters -->

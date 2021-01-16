@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Apology
+{% endblock %}
+
+{% block main %}
+    <img alt="{{ top }}" class="border" src="http://memegen.link/custom/{{ top | urlencode }}/{{ bottom | urlencode }}.jpg?alt=https://i.imgur.com/vBVVMoo.jpg" title="{{ top }}">
+{% endblock %}
+
+<!-- used CS50 Finance's meme apology but with academically-themed Creative Commons photo found at https://ccsearch-dev.creativecommons.org/photos/7f24b3f6-ff37-4a15-a9b1-5ea2b5ade44d -->
