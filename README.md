@@ -14,23 +14,20 @@ The app was built with a Flask framework incorporating Python, SQL, and HTML/CSS
 which itself contains two folders (static, templates) and six files (application.py, bcaprep.db, DESIGN.md, helpers.py, README.md, requirements.txt). The folder
 static contains three files: favicon.ico, photo.jpg, styles.css. The folder templates contains eight files: about.html, apology.html, contact.html, index.html,
 layout.html, login.html, test.html, tips.html. All files other than the DESIGN.md and README.md documentation files are necessary for the proper functioning of
-the app, and the app should be tested with the command "flask run" in the implementation folder in CS50 IDE.
+the app.
 
 My hope is that this app would help equalize the resources that disadvantaged BCA applicants have compared to their wealthier peers and (ultimately) help make BCA
-a more racially and socioeconomically diverse place. I plan to improve and publish this app during winter break after the semester is over.
+a more racially and socioeconomically diverse place.
 
-YouTube URL: https://youtu.be/_GaJCzKVPA8
-
-*list of for-profit companies
--TestPrepBCA (bcatestprep.com)
--Accel Learning (https://www.accellearning.com/test-prep/bca-test-prep-classes/)
--Masters Prep (https://www.mastersprep.org/bergen-county-academies-prep)
--MEK Review (https://mekreview.com/programs/bergen-county-academies-prep/)
--EMI Academy (http://www.emiacademy.com/emi-program/test-prep/)
+*list of for-profit companies<br>
+-Accel Learning (https://www.accellearning.com/test-prep/bca-test-prep-classes/)<br>
+-Masters Prep (https://www.mastersprep.org/bergen-county-academies-prep)<br>
+-MEK Review (https://mekreview.com/programs/bergen-county-academies-prep/)<br>
+-EMI Academy (http://www.emiacademy.com/emi-program/test-prep/)<br>
 -Gouda BCA (https://www.goudabca.com/bcaprepcourse)
 
 **https://www.niche.com/k12/bergen-county-academies-hackensack-nj/
 
-Acknowledgements not included in code: Steven DiSilvio, my friend and another BCA graduate (who now studies math and CS at Columbia), came up with this idea many
-months ago, and I got his approval to implement a version of it for my CS50 final project. I used favicon.io (https://favicon.io/favicon-generator/) to make the
-favicon.ico file. David Malan, Brian Yu, and Yoel Hawa for teaching me the skills to make this app, and CS50 Finance for being a starting point for many aspects.
+Acknowledgements: Steven DiSilvio, my friend and fellow BCA graduate, gave me the idea for this project. I credit CS50 instructors David Malan, Brian Yu, and Yoel
+Hawa for teaching me the skills to make this app, Helen Cho for being a very supportive friend in the publication process, and the finance problem set for being a
+starting point in many aspects. I used favicon.io (https://favicon.io/favicon-generator/) to make the favicon.ico file.

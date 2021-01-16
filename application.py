@@ -1,5 +1,3 @@
-# Used CS50 Finance's application.py (some other aspects as well, noted in their respective files) as starting point
-
 import os
 
 from cs50 import SQL
@@ -11,8 +9,9 @@ from werkzeug.security import check_password_hash, generate_password_hash
 
 from helpers import apology, login_required
 
-# Configure application
+# Configure application and database
 app = Flask(__name__)
+db = SQL(os.getenv("DATABASE_URL"))
 
 # Ensure templates are auto-reloaded
 app.config["TEMPLATES_AUTO_RELOAD"] = True
@@ -31,13 +30,12 @@ app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
-# Configure CS50 Library to use SQLite database
-db = SQL("sqlite:///bcaprep.db")
-
 @app.route("/", methods=["GET", "POST"])
 def index():
+
     if request.method == "GET":
         return render_template("index.html")
+
     if request.method == "POST":
         if not request.form.get("username"):
             return apology("must provide username", 400)
@@ -49,6 +47,7 @@ def index():
             return apology("passwords must match", 400)
         if {"username": request.form.get("username")} in db.execute("SELECT username FROM users"):
             return apology("username already taken", 400)
+
         db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", request.form.get("username"), generate_password_hash(request.form.get("password")))
         session.clear()
         return redirect("/entrancetest")
@@ -109,8 +108,6 @@ def login():
 
 @app.route("/logout")
 def logout():
-    """Log user out"""
-
     # Forget any user_id
     session.clear()
 
@@ -118,7 +115,6 @@ def logout():
     return redirect("/entrancetest")
 
 def errorhandler(e):
-    """Handle error"""
     if not isinstance(e, HTTPException):
         e = InternalServerError()
     return apology(e.name, e.code)

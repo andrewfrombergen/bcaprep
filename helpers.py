@@ -1,5 +1,3 @@
-# Used CS50 Finance's helpers.py
-
 import os
 import requests
 import urllib.parse
