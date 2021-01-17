@@ -4,9 +4,9 @@ nav .navbar-brand
     font-size: xx-large;
 }
 
-/* Blue color for brand */
 nav .navbar-brand .blue
 {
+    /* Blue color for brand */
     color: #209cee;
 }
 
@@ -34,8 +34,10 @@ main img
     max-width: 100%;
 }
 
+
 ul
 {
+    /* Remove indentation for centered lists */
     list-style-position: inside;
     margin: 0;
     padding: 0;
@@ -43,10 +45,8 @@ ul
 
 ol
 {
+    /* Remove indentation for centered lists */
     list-style-position: inside;
     margin: 0;
     padding: 0;
 }
-
-/* referenced https://stackoverflow.com/questions/12426609/remove-li-indentation to learn how to remove indentation for centered lists (last two items) */
-/* used/referenced CS50 Finance for the first five items */

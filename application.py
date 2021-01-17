@@ -70,28 +70,28 @@ def contact():
 @app.route("/entrancetest", methods=["GET", "POST"])
 @login_required
 def entrancetest():
+    # Save functionality
     if request.method == "POST":
-        db.execute("UPDATE users SET entrancetest = ? WHERE id = ?", request.form.get("entrancetest"), session["user_id"]) # Save functionality
+        db.execute("UPDATE users SET entrancetest = ? WHERE id = ?", request.form.get("entrancetest"), session["user_id"])
 
+    # Retrieve and render with previous study plan and username
     username = db.execute("SELECT username FROM users WHERE id = ?", session["user_id"])[0]["username"]
     entrancetest = db.execute("SELECT entrancetest FROM users WHERE username = ?", username)[0]["entrancetest"]
-    return render_template("test.html", entrancetest=entrancetest, username=username) # Pass in previous text and username
+    return render_template("test.html", entrancetest=entrancetest, username=username)
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
-    """Log user in"""
 
     # Forget any user_id
     session.clear()
 
-    # User reached route via POST (as by submitting a form via POST)
-    if request.method == "POST":
+    if request.method == "GET":
+        return render_template("login.html")
 
-        # Ensure username was submitted
+    if request.method == "POST":
+        # Ensure username and password were submitted
         if not request.form.get("username"):
             return apology("must provide username", 403)
-
-        # Ensure password was submitted
         elif not request.form.get("password"):
             return apology("must provide password", 403)
 
@@ -104,10 +104,6 @@ def login():
 
         session["user_id"] = rows[0]["id"]
         return redirect("/entrancetest")
-
-    # User reached route via GET (as by clicking a link or via redirect)
-    else:
-        return render_template("login.html")
 
 @app.route("/logout")
 def logout():
