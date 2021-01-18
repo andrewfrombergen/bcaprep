@@ -6,8 +6,8 @@
 
 {% block main %}
     <h1>Welcome to BCA Prep!</h1>
-    <h5>Your free and comprehensive resource in applying to the Bergen County Academies in Hackensack, NJ.</h5><br>
-    <h6>Consider signing up for an account below to plan and track your entrance test preparation.</h6><br>
+    <h5 style="margin-bottom:0">Your free and comprehensive resource in applying to the Bergen County Academies in Hackensack, NJ.</h5><br>
+    <h6 style="margin-bottom:0">Consider signing up for an account below to plan and track your entrance test preparation.</h6><br>
 
     <form action="/" method="post">
         <div class="form-group">
@@ -20,7 +20,7 @@
             <input class="form-control" name="confirmation" placeholder="Confirm Password" type="password">
         </div>
         <button class="btn btn-primary" type="submit">Register</button>
-    </form>
+    </form><br>
 
-    <footer class="small text-center text-muted">Passwords must be at least eight characters and contain at least one capital letter as well as one number.</footer>
+    <footer class="small text-center text-muted">Passwords must be at least eight characters in length and contain at least one capital letter as well as one number.</footer>
 {% endblock %}

@@ -8,7 +8,7 @@ from tempfile import mkdtemp
 from werkzeug.exceptions import default_exceptions, HTTPException, InternalServerError
 from werkzeug.security import check_password_hash, generate_password_hash
 
-from helpers import apology, login_required
+from helpers import apology, login_required, is_complex
 
 # Configure application and database
 app = Flask(__name__)
@@ -44,7 +44,7 @@ def index():
             return apology("must provide username", 400)
         if not request.form.get("password"):
             return apology("must provide password", 400)
-        elif not is_complex(request.form.get("password"))
+        elif not is_complex(request.form.get("password")):
             return apology("password does not meet complexity requirements")
         if not request.form.get("confirmation"):
             return apology("must confirm password", 400)
