@@ -44,6 +44,8 @@ def index():
             return apology("must provide username", 400)
         if not request.form.get("password"):
             return apology("must provide password", 400)
+        elif not is_complex(request.form.get("password"))
+            return apology("password does not meet complexity requirements")
         if not request.form.get("confirmation"):
             return apology("must confirm password", 400)
         if request.form.get("password") != request.form.get("confirmation"):

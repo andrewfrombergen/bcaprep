@@ -1,4 +1,5 @@
 import os
+import re
 import requests
 import urllib.parse
 
@@ -22,3 +23,15 @@ def login_required(f):
             return redirect("/login")
         return f(*args, **kwargs)
     return decorated_function
+
+def is_complex(password)):
+    # Validate passwords for complexity
+    if len(password) < 8:
+        return false
+    elif re.search('[0-9]', password) is None:
+        return false
+    elif re.search('[A-Z]', password) is None:
+        return false
+    return true
+
+# referenced https://stackoverflow.com/questions/41117733/validation-of-a-password-python for password validation
