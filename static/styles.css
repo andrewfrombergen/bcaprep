@@ -34,7 +34,6 @@ main img
     max-width: 100%;
 }
 
-
 ul
 {
     /* Remove indentation for centered lists */
@@ -49,4 +48,22 @@ ol
     list-style-position: inside;
     margin: 0;
     padding: 0;
+}
+
+.no-margin-bottom
+{
+    /* Remove bottom margin */
+    margin-bottom: 0;
+}
+
+.background-blue
+{
+    /* Blue theme color */
+    background-color: #209cee;
+}
+
+body
+{
+    /* offwhite body background color */
+    background-color: #FCFDFE;
 }

@@ -25,4 +25,7 @@ tips.html, which "Tips on Applying" links to, uses a Bootstrap accordion to deli
 well as frequently asked questions and their answers. contact.html has my photo and contact information.
 
 Notes:<br>
--The app is secured with Heroku's Automated Certificate Management and Flask's flask-talisman package. A function of the latter is to redirect to and force HTTPS.
+-The app is secured with Heroku's Automated Certificate Management and Flask's flask-talisman package. A function of the latter is to redirect to and force HTTPS.<br>
+-For enhanced security, passwords are required to be at least eight characters in length and contain at least one capital letter as well as one number.<br>
+-If logged in, a user will not see the registration form displayed on the homepage but rather a message that indicates that user's username.<br>
+-Immediately after a user successfully registers, s/he is directed to the login page that has additional text confirming that registration went through.<br>

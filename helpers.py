@@ -6,6 +6,7 @@ import urllib.parse
 from flask import redirect, render_template, request, session
 from functools import wraps
 
+
 def apology(message, code=400):
     # Apology message for errors
     def escape(s):
@@ -15,6 +16,7 @@ def apology(message, code=400):
         return s
     return render_template("apology.html", top=code, bottom=escape(message)), code
 
+
 def login_required(f):
     # Decorate routes to require login
     @wraps(f)
@@ -23,6 +25,7 @@ def login_required(f):
             return redirect("/login")
         return f(*args, **kwargs)
     return decorated_function
+
 
 def is_complex(password):
     # Validate passwords for complexity

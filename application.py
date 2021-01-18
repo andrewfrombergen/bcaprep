@@ -18,6 +18,7 @@ db = SQL(os.getenv("DATABASE_URL"))
 # Ensure templates are auto-reloaded
 app.config["TEMPLATES_AUTO_RELOAD"] = True
 
+
 # Ensure responses aren't cached
 @app.after_request
 def after_request(response):
@@ -32,9 +33,9 @@ app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
+
 @app.route("/", methods=["GET", "POST"])
 def index():
-
     if request.method == "GET":
         logged_in = session.get("user_id") is not None
         if logged_in:
@@ -62,17 +63,21 @@ def index():
         session.clear()
         return render_template("login.html", registered=True)
 
+
 @app.route("/about")
 def about():
     return render_template("about.html")
+
 
 @app.route("/tips")
 def tips():
     return render_template("tips.html")
 
+
 @app.route("/contact")
 def contact():
     return render_template("contact.html")
+
 
 @app.route("/entrancetest", methods=["GET", "POST"])
 @login_required
@@ -86,9 +91,9 @@ def entrancetest():
     entrancetest = db.execute("SELECT entrancetest FROM users WHERE username = ?", username)[0]["entrancetest"]
     return render_template("test.html", entrancetest=entrancetest, username=username)
 
+
 @app.route("/login", methods=["GET", "POST"])
 def login():
-
     # Forget any user_id
     session.clear()
 
@@ -112,6 +117,7 @@ def login():
         session["user_id"] = rows[0]["id"]
         return redirect("/entrancetest")
 
+
 @app.route("/logout")
 def logout():
     # Forget any user_id
@@ -119,6 +125,7 @@ def logout():
 
     # Redirect user to login form
     return redirect("/entrancetest")
+
 
 def errorhandler(e):
     if not isinstance(e, HTTPException):

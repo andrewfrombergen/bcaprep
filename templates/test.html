@@ -5,9 +5,9 @@
 {% endblock %}
 
 {% block main %}
-    <h6>The entrance test is a crucial component of your application. Below, I suggest strategies and resources to help you make a study plan. I recommend that
-    you use the text box provided to track your progress as you study. For example, you can make an ordered list of study tasks you plan to accomplish and cross
-    them off as you finish them. You will be able to save what you wrote and return to it in future sessions.</h6><br>
+    <h6 class="no-margin-bottom">The entrance test is a crucial component of your application. Below, I suggest strategies and resources to help you make a study
+    plan. I recommend that you use the text box provided to track your progress as you study. For example, you can make an ordered list of study tasks you plan to
+    accomplish and cross them off as you finish them. You will be able to save what you wrote and return to it in future sessions.</h6><br>
 
     <div class="accordion" id="accordionExample">
       <div class="card">
@@ -70,8 +70,8 @@
     </form>
     <form id = "logout" action="/logout"></form>
 
-    <button class="btn btn-primary" type="submit" form = "entrancetest">Save</button>
-    <button class="btn btn-primary" type="submit" form = "logout">Log Out</button><br><br>
+    <button class="btn btn-primary background-blue" type="submit" form = "entrancetest">Save</button>
+    <button class="btn btn-primary background-blue" type="submit" form = "logout">Log Out</button><br><br>
 
     <h6>You are logged in as <i>{{ username }}</i>. Remember to save before logging out!</h6>
 {% endblock %}
