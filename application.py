@@ -36,7 +36,12 @@ Session(app)
 def index():
 
     if request.method == "GET":
-        return render_template("index.html")
+        logged_in = session.get("user_id") is not None
+        if logged_in:
+            username = db.execute("SELECT username FROM users WHERE id = ?", session["user_id"])[0]["username"]
+            return render_template("index.html", logged_in=logged_in, username=username)
+        else:
+            return render_template("index.html", logged_in=logged_in)
 
     # Attempt to register user
     if request.method == "POST":
@@ -55,7 +60,7 @@ def index():
 
         db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", request.form.get("username"), generate_password_hash(request.form.get("password")))
         session.clear()
-        return redirect("/entrancetest", registered=True)
+        return render_template("login.html", registered=True)
 
 @app.route("/about")
 def about():

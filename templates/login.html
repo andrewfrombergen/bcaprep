@@ -5,8 +5,8 @@
 {% endblock %}
 
 {% block main %}
-    {% if registered == True %}
-    {{ <h6>Registration successful! Now you can log in:</p> }}
+    {% if registered %}
+        <h6>Registration successful! Now you can log in:</h6><br>
     {% endif %}
 
     <form action="/login" method="post">
