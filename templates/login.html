@@ -5,6 +5,10 @@
 {% endblock %}
 
 {% block main %}
+    {% if registered == True %}
+    {{ <h6>Registration successful! Now you can log in:</p> }}
+    {% endif %}
+
     <form action="/login" method="post">
         <div class="form-group">
             <input autocomplete="off" autofocus class="form-control" name="username" placeholder="Username" type="text">

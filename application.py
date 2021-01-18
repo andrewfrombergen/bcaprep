@@ -55,7 +55,7 @@ def index():
 
         db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", request.form.get("username"), generate_password_hash(request.form.get("password")))
         session.clear()
-        return redirect("/entrancetest")
+        return redirect("/entrancetest", registered=True)
 
 @app.route("/about")
 def about():
