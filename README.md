@@ -17,7 +17,7 @@ URL: https://www.bcaprep.org/
 *list of for-profit companies<br>
 -Accel Learning (https://www.accellearning.com/test-prep/bca-test-prep-classes/)<br>
 -Masters Prep (https://www.mastersprep.org/bergen-county-academies-prep)<br>
--MEK Review (https://mekreview.com/programs/bergen-county-academies-prep/)<br>
+-MEK Review (https://mekreview.com/high-school-middle-school-test-prep/?cat=bca-prep)<br>
 -EMI Academy (http://www.emiacademy.com/emi-program/test-prep/)<br>
 -Gouda BCA (https://www.goudabca.com/bcaprepcourse)
 
